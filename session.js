@@ -72,7 +72,7 @@ async function login()
     xhr.withCredentials = true;
     xhr.open("POST", sessionsUrl)
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onerror = async function() { // Call a function when the state changes.
+    xhr.onerror = async function() { // This supposed and desired to fail with a CORS error. Session checking will be done only after the CORS failure.
         var sessionsUrl = `${baseUrl}/api/v1/sessions/me`;
         var user = await getJSONData(sessionsUrl)
         user = user._links.user.name
