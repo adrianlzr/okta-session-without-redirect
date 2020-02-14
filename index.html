@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Okta Session Without redirect</title>
+    <style>
+        .hide{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    </script>
+    <form onsubmit=event.preventDefault()>
+        <label for="username"><strong>Username</strong></label>
+        <input type="text" name="username" id="username">
+        <br>
+        <br>
+        <label for="password"><strong>Password</strong></label>
+        <input type="password" name="password" id="password">
+        <br>
+        <hr>
+        <input type="submit" id="loginbtn" value="Login">
+    </form>
+    <hr>
+    <div class="hide" id="sessions_me">
+        <p>Hello: <strong><span id="user"></span></strong>. You are now logged in!</p>
+    </div>
+    <script src="session.js"></script>
+</body>
+</html>
